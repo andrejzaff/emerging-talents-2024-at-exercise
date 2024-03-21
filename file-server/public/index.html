@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Server</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">File Server</div>
+
+        <div class="upload-form">
+            <h2>Upload File</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <label for="file-upload" class="custom-file-label">Choose a file...</label>
+                <input id="file-upload" type="file" name="file" class="custom-file-input">
+                <button type="submit" class="uploadBtn">Upload</button>
+                <div id="message"></div>
+            </form>
+        </div>
+
+        <button onclick="toggleFileList()" class="toggleBtn">Show Files</button>
+
+        <div id="fileListContainer" style="display: none;">
+            <h2>List of Files</h2>
+            <ul id="fileList"></ul>
+        </div>
+
+        <div class="download">
+            <h2>Download File</h2>
+            <select id="fileSelect" class="select-file"></select>
+            <button onclick="downloadSelectedFile()" class="downloadBtn">Download</button>
+        </div>
+
+        <div class="rename">
+            <h2>Rename File</h2>
+            <select id="oldFilenameSelect" class="select-file"></select>
+            <input type="text" id="newFilename" placeholder="Enter new filename" class="input-text">
+            <button onclick="renameFile()" class="renameBtn">Rename</button>
+        </div>
+    </div>
+    <script src="client.js"></script>
+</body>
+</html>
